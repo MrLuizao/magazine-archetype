@@ -43,7 +43,7 @@ export class MenusService {
         icon: 'notifications'
       },
       {
-        title: 'Categories',
+        title: 'Magazine',
         url: '/tabs/categories',
         icon: 'reorder-four'
       },

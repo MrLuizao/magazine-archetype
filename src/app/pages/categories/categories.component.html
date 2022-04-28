@@ -1,36 +1,27 @@
-<!--
-  - Categories Page Screen
-  - @author    CreativeApps <CreativeApps.A@gmail.com>
-  - @copyright Copyright (c) 2020
-  - @license   CreativeApps
--->
 
-<!-- Header -->
 <ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
-    <!-- Side Menu -->
     <ion-buttons slot="start">
       <ion-menu-button color="color1"></ion-menu-button>
     </ion-buttons>
 
-    <!-- Page Title -->
-    <ion-title>Categories</ion-title>
+    <ion-title>Volumes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<!-- Main Contents -->
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Categories</ion-title>
+      <ion-title size="large">Volumes</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <!-- List Of Categories -->
   <ion-grid>
     <ion-row>
       <ion-col size-lg="3" size-md="4" size-sm="6" size="6" *ngFor="let item of categories">
-        <ion-card [ngStyle]="{'background': item.color}" class="ion-no-margin">
+        <ion-card class="ion-no-margin" (click)="openSubscription()" style="height: 100%;">
+          <img [src]="item.url" />
+        <!-- <ion-card [ngStyle]="{'background': item.color}" class="ion-no-margin" (click)="openSubscription()"> -->
           <ion-card-header>
             <div class="name">{{item.name}}</div>
             <ion-card-subtitle>{{item.totalArticles}} Articles</ion-card-subtitle>

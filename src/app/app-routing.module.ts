@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'forget-password',
     loadChildren: () => import('./pages/auth/forget-password/forget-password.module').then(m => m.ForgetPasswordModule)
+  },
+  {
+    path: 'subscription',
+    loadChildren: () => import('./pages/subscription/subscription.module').then( m => m.SubscriptionPageModule)
   }
 ];
 @NgModule({
