@@ -1,0 +1,29 @@
+<!--
+  - Popular News Component (Search Page)
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+<ion-slides [options]="slideOpts" class="ion-padding">
+  <ion-slide *ngFor="let item of articles">
+    <ion-row>
+      <ion-card class="ion-no-padding ion-no-margin">
+        <img [src]="item.featureImg" />
+        <ion-fab vertical="top" horizontal="end">
+          <ion-fab-button>
+            <ion-icon color="color1" ios="bookmark-outline" md="bookmark-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </ion-card>
+
+      <ion-list lines="none" (click)="gotoArticleDetailsPage(item)">
+        <ion-item class="ion-no-padding ion-no-margin">
+          <ion-label class="ion-text-wrap">
+            <h4 class="title">{{item.title}}</h4>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+  </ion-slide>
+</ion-slides>

@@ -1,0 +1,47 @@
+<!--
+  - Home Page Screen
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+<!-- Header -->
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+
+    <!-- Menu Icon -->
+    <ion-buttons slot="start">
+      <ion-menu-button color="color1"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Page Title -->
+    <ion-title>
+      News
+    </ion-title>
+
+    <!-- Notification Icon -->
+    <ion-buttons slot="end">
+      <ion-button color="color1" routerLink="/tabs/notification" routerDirection="root">
+        <ion-icon slot="end" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Main Content -->
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">News</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Home Categories Component -->
+  <app-home-categories></app-home-categories>
+
+  <!-- Home Recent News Component -->
+  <app-home-recent-news></app-home-recent-news>
+
+  <!-- Home Hot News Component -->
+  <app-home-hot-news></app-home-hot-news>
+</ion-content>

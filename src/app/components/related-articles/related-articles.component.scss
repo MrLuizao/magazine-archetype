@@ -1,0 +1,28 @@
+#related-news {
+    #tag {
+        font-family: 'OpenSans-Bold';
+        font-size: 2rem;
+    }
+
+    .item {
+        ion-thumbnail {
+            width: 140px;
+            height: 90px;
+
+            img {
+                width: 140px;
+                height: 90px;
+                border-radius: 5px;
+            }
+        }
+
+        // .title {
+        //     font-family: 'OpenSans-SemiBold';
+        // }
+
+        ion-note {
+            font-size: 1rem;
+            // font-family: 'OpenSans-Bold';
+        }
+    }
+}

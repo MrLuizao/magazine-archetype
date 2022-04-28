@@ -1,0 +1,14 @@
+<!--
+  - Categories Component (Home Page)
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+<ion-slides [options]="slideOpts" class="ion-padding-top">
+  <ion-slide *ngFor="let item of categories; let i=index">
+    <ion-chip color="color1" width="100%" (click)="goToArticlesPageByCategory(item.name)">
+      <ion-label>{{item.name}}</ion-label>
+    </ion-chip>
+  </ion-slide>
+</ion-slides>

@@ -1,0 +1,99 @@
+<!--
+  - Articles Of Specific Category Page Screen
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+<!-- Header -->
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+
+    <!-- Menu Icon -->
+    <ion-buttons slot="start">
+      <ion-menu-button color="color1"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Title -->
+    <ion-title>{{category}}</ion-title>
+
+    <!-- Article View Options -->
+    <div class="ion-text-end">
+
+      <!-- One Column Option -->
+      <ion-button fill="clear" [color]="oneColumn ? 'color1' : 'medium'" class="ion-no-padding"
+        (click)="showOneColumn()">
+        <ion-icon slot="icon-only" name="square"></ion-icon>
+      </ion-button>
+
+      <!-- Grid Option -->
+      <ion-button fill="clear" [color]="grid ? 'color1' : 'medium'" class="ion-no-padding" (click)="showGrid()">
+        <ion-icon slot="icon-only" name="grid"></ion-icon>
+      </ion-button>
+
+      <!-- List View Option -->
+      <ion-button fill="clear" [color]="list ? 'color1' : 'medium'" class="ion-no-padding" (click)="showList()">
+        <ion-icon slot="icon-only" name="list"></ion-icon>
+      </ion-button>
+    </div>
+    <!-- End Article View Options -->
+  </ion-toolbar>
+</ion-header>
+
+<!-- Main Content -->
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{category}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Grid View Contents -->
+  <ion-grid id="grid" *ngIf="grid" class="ion-padding">
+    <ion-row>
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let item of articles" (click)="gotoArticleDetailsPage(item)">
+        <ion-card class="ion-no-margin">
+          <div class="featureImg" [style.background-image]="'url(' + item.featureImg + ')'"></div>
+        </ion-card>
+        <h4 class="title">{{item.title}}</h4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- One Column View Contents -->
+  <div *ngIf="oneColumn" class="ion-padding">
+    <ion-card id="oneColumn" *ngFor="let item of articles"
+      [ngStyle]="{'background' : 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + item.featureImg + ')'}"
+      (click)="gotoArticleDetailsPage(item)">
+      <div class="section1">
+        <ion-button size="small" color="danger">{{item.category}}</ion-button>
+      </div>
+
+      <div class="section2">
+        <h2>{{item.title}}</h2>
+
+        <p>
+          <ion-icon name="time-outline" color="color1"></ion-icon>{{item.publishedAt | date}}
+        </p>
+      </div>
+    </ion-card>
+  </div>
+
+  <!-- List View Contents -->
+  <div id="list" *ngIf="list">
+    <ion-list lines="none" *ngFor="let item of articles; let i = index">
+      <ion-item (click)="gotoArticleDetailsPage(item)">
+        <!-- Feature Image -->
+        <ion-thumbnail slot="start">
+          <img style="vertical-align: middle;" [src]="item.featureImg">
+        </ion-thumbnail>
+
+        <!-- Article Details -->
+        <ion-label class="ion-text-wrap">
+          <h4 class="title">{{item.title}}</h4>
+          <ion-text>By {{item.author}}</ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,61 @@
+<!--
+  - Article Details Screen
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+<!-- Header -->
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="color1">
+
+    <!-- Back button -->
+    <ion-buttons slot="start">
+      <ion-button color="light" (click)="backPreviousRoute()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <!-- Title -->
+    <ion-title>IonNews</ion-title>
+
+    <!-- Article Save Button -->
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="saveArticle()">
+        <ion-icon name="bookmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Main Content -->
+<ion-content [fullscreen]="true">
+
+  <!-- Article Feature Image -->
+  <ion-card class="ion-no-padding ion-no-margin">
+    <img [src]="articleDetails.featureImg" />
+  </ion-card>
+
+  <!-- Article Title -->
+  <div class="title ion-padding">{{articleDetails.title}}</div>
+
+  <!-- Infos -->
+  <div class="author-details ion-padding">
+
+    <!-- Article Author Infos -->
+    <p>By {{articleDetails.author}}</p>
+
+    <!-- Article Published Date -->
+    <ion-text color="medium">Published at {{articleDetails.publishedAt |date}}</ion-text>
+    <div class="hr"></div>
+  </div>
+
+  <!-- Article Short Description -->
+  <p class="description ion-padding-start ion-padding-end ion-text-justify">{{articleDetails.description}}</p>
+
+  <!-- AArticle Main Contents -->
+  <p class="content ion-padding-start ion-padding-end ion-text-justify" [innerHTML]="articleDetails.content"></p>
+
+  <!-- Related Articles Component -->
+  <app-related-articles></app-related-articles>
+</ion-content>

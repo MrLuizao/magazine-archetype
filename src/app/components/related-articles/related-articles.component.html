@@ -1,0 +1,27 @@
+<!--
+  - Related Articles Component
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+<div id="related-news" class="ion-padding-start">
+  <div id="tag">Related Articles</div>
+
+  <div class="hr"></div>
+
+  <ion-list lines="none" *ngFor="let item of articles; let i = index">
+    <ion-item class="ion-no-padding" *ngIf="i < 3" (click)="gotoArticleDetailsPage(item)">
+      <!-- Feature Image -->
+      <ion-thumbnail slot="start">
+        <img style="vertical-align: middle;" [src]="item.featureImg">
+      </ion-thumbnail>
+
+      <!-- Article Details -->
+      <ion-label class="ion-text-wrap">
+        <h4 class="title">{{item.title}}</h4>
+        <ion-text>By {{item.author}}</ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</div>

@@ -1,0 +1,22 @@
+ion-menu {
+    ion-toolbar {
+        --background: var(--ion-color-color1);
+        height: 150px;
+
+        ion-row {
+            padding-top: 30px;
+
+            img {
+                height: 90px;
+            }
+
+            .text-content {
+                // font-family: 'Volkhov';
+                display: flex;
+                align-items: center;
+                font-size: 3rem;
+                color: var(--ion-color-light);
+            }
+        }
+    }
+}

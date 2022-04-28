@@ -1,0 +1,71 @@
+<!--
+  - Saves Articles Page Screen
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+<!-- Header -->
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+
+    <!-- Menu Icon -->
+    <ion-buttons slot="start">
+      <ion-menu-button color="color1"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Page Title -->
+    <ion-title>Saved Stories</ion-title>
+
+    <!-- Clear All Articles -->
+    <ion-buttons slot="end">
+      <ion-button color="color1" (click)="clearStorageArticles()">
+        <ion-icon slot="end" name="nuclear"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Contents -->
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Saved Stories</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Empty Page -->
+  <!-- No saved articles found -->
+  <div *ngIf="articles.length === 0">
+    <ion-grid id="no-elements" class="ion-padding" style="height: 70%">
+      <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 70%; flex-direction: column">
+        <div class="ion-text-center ion-padding">
+          <ion-icon name="bookmark-outline" style="zoom:5.0;" color="medium"></ion-icon>
+          <h4>Find your saved articles here</h4>
+          <p>When reading an articles, tap the <ion-icon name="bookmark-outline" color="medium"></ion-icon> icon to save
+            it. You'll be able to come back here to read it later.</p>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!-- Saved Articles Contents -->
+  <div id="home-hot-news" class="ion-padding-start" *ngIf="articles.length > 0">
+    <ion-list lines="none" *ngFor="let item of articles">
+      <ion-item class="ion-no-padding" (click)="gotoArticleDetailsPage(item)">
+
+        <!-- Feature Image -->
+        <ion-thumbnail slot="start">
+          <img style="vertical-align: middle;" [src]="item.featureImg">
+        </ion-thumbnail>
+
+        <!-- Article Details -->
+        <ion-label class="ion-text-wrap">
+          <h4 class="title">{{item.title}}</h4>
+          <ion-text>By {{item.author}}</ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

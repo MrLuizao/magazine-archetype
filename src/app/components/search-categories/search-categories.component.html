@@ -1,0 +1,19 @@
+<!--
+  - Categories Component (Search Page)
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+<ion-list>
+  <ion-item-divider>
+    <ion-label>
+      Categories
+    </ion-label>
+  </ion-item-divider>
+
+  <ion-item lines="none" *ngFor="let item of categories" (click)="goToArticlesPageByCategory(item.name)">
+    <ion-label class="category-name"><strong>{{item.name}}</strong></ion-label>
+    <ion-icon name="chevron-forward-outline" slot="end" color="medium" style="zoom:.5;"></ion-icon>
+  </ion-item>
+</ion-list>

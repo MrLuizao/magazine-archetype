@@ -1,0 +1,59 @@
+<!--
+  - Search Screen
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+
+<!-- Header -->
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button color="color1"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Page Title -->
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Contents -->
+<ion-content id="search" [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Search</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Search bar -->
+  <div id="searchbar" class="ion-padding">
+    <ion-searchbar placeholder="Search restaurants" debounce="500" (ionInput)="getSearchArticles($event)">
+    </ion-searchbar>
+  </div>
+
+  <!-- Search Result Content -->
+  <div id="list" class="ion-padding" *ngIf="searchResult.length > 0">
+    <ion-list *ngFor="let item of searchResult">
+      <ion-item class="ion-no-padding" (click)="gotoArticleDetailsPage(item)">
+        <ion-label class="ion-text-wrap">
+          <h4 class="title">{{item.title}}</h4>
+          <ion-text>{{item.publishedAt | date}}</ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- When search result not exist -->
+  <!-- Show this section -->
+  <div *ngIf="searchResult.length <= 0">
+    <!-- Popular News Component -->
+    <app-search-popular-news></app-search-popular-news>
+
+    <!-- Categories Component -->
+    <app-search-categories></app-search-categories>
+  </div>
+
+</ion-content>

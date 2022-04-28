@@ -1,0 +1,25 @@
+<!--
+  - Recent News Component (Home Page)
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+<ion-slides class="ion-padding" #slider [options]="slideOpts">
+  <ion-slide *ngFor="let item of articles"
+    [ngStyle]="{'background' : 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + item.featureImg + ')'}"
+    (click)="gotoArticleDetailsPage(item)">
+
+    <div class="section1">
+      <ion-button size="small" color="danger">{{item.category}}</ion-button>
+    </div>
+
+    <div class="section2">
+      <h2>{{item.title}}</h2>
+
+      <p>
+        <ion-icon name="time-outline" color="color1"></ion-icon>{{item.publishedAt | date}}
+      </p>
+    </div>
+  </ion-slide>
+</ion-slides>

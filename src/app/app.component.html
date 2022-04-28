@@ -1,0 +1,50 @@
+<!--
+  - Main App Component
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu side="start" menuId="pages" type="overlay" contentId="main-content">
+
+      <!-- Menu Header -->
+      <ion-header>
+        <ion-toolbar>
+          <ion-row>
+            <!-- <ion-col size="4"><img src="assets/images/news-icon.png"></ion-col> -->
+            <ion-col size="6" class="text-content">
+              <span>IonNews</span>
+            </ion-col>
+          </ion-row>
+        </ion-toolbar>
+      </ion-header>
+
+      <!-- Content Options -->
+      <!-- Page Menus -->
+      <ion-content>
+        <ion-list class="ion-padding" lines="none">
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon size="small" slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+
+      <!-- Footer -->
+      <ion-footer no-border>
+        <div class="ion-padding">
+          <ion-button color="color1" expand="block" (click)="signout()">
+            Signout</ion-button>
+        </div>
+      </ion-footer>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

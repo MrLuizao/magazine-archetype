@@ -1,0 +1,23 @@
+<!--
+  - Hot News Component (Home Page)
+  - @author    CreativeApps <CreativeApps.A@gmail.com>
+  - @copyright Copyright (c) 2020
+  - @license   CreativeApps
+-->
+
+<div id="home-hot-news" class="ion-padding-start">
+  <ion-list lines="none" *ngFor="let item of articles">
+    <ion-item class="ion-no-padding" (click)="gotoArticleDetailsPage(item)">
+      <!-- Article Details -->
+      <ion-label class="ion-text-wrap">
+        <h4 class="title">{{item.title}}</h4>
+        <ion-text>By {{item.author}}</ion-text>
+      </ion-label>
+
+      <!-- Feature Image -->
+      <ion-thumbnail slot="end">
+        <img style="vertical-align: middle;" [src]="item.featureImg">
+      </ion-thumbnail>
+    </ion-item>
+  </ion-list>
+</div>
