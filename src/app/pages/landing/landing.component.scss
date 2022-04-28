@@ -1,5 +1,5 @@
 ion-content.background {
-    --background: url(../../../assets/images/landing.jpg) no-repeat center center / cover;
+    --background: url('http://tanpeck.com/gallery_gen/e85fc234c8070188be1394a569d9fc88.jpg') no-repeat center center / cover;
 
 
     .layer {
@@ -19,12 +19,10 @@ ion-content.background {
     }
 
     h2 {
-        // font-family: 'OpenSans-Bold';
         font-size: 2.5rem;
     }
 
     .sub-title {
-        // font-family: "OpenSans-SemiBold";
         font-size: 1.5rem;
         padding-right: 70px;
     }

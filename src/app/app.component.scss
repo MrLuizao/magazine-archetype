@@ -1,14 +1,17 @@
 ion-menu {
     ion-toolbar {
-        --background: var(--ion-color-color1);
-        height: 150px;
+        // --background: var(--ion-color-color1);
+        // height: 150px;
 
         ion-row {
-            padding-top: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 1em;
 
-            img {
-                height: 90px;
-            }
+            // img {
+            //     height: 90px;
+            // }
 
             .text-content {
                 // font-family: 'Volkhov';

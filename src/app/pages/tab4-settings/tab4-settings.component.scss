@@ -15,18 +15,10 @@ ion-list {
     background: #f7f7f7 !important;
 }
 
-// ion-title {
-//     font-family: 'OpenSans-Bold';
-// }
+ion-title {
+    color: var(--ion-color-color1) !important;
+}
 
 ion-item-divider {
     --background: #f7f7f7;
-
-    // ion-label {
-    //     font-family: 'OpenSans-SemiBold' !important;
-    // }
 }
-
-// ion-item ion-label {
-//     font-family: 'OpenSans-Regular' !important;
-// }

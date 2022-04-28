@@ -38,6 +38,9 @@
     font-family: 'Volkhov' !important;
 }
 
-// ion-item > ion-label{
-//     font-family: 'Volkhov'!important;
-// }
+ion-item > ion-label,
+ion-item > ion-icon,
+{
+    color: var(--ion-color-color1) !important;
+}
+
