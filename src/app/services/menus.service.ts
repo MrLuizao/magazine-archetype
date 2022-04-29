@@ -45,7 +45,8 @@ export class MenusService {
       {
         title: 'Magazine',
         url: '/tabs/categories',
-        icon: 'reorder-four'
+        // icon: 'reorder-four'
+        icon: 'tablet-portrait'
       },
       {
         title: 'login',
@@ -62,11 +63,11 @@ export class MenusService {
         url: '/forget-password',
         icon: 'disc-outline'
       },
-      {
-        title: 'landing',
-        url: '/landing',
-        icon: 'tablet-portrait'
-      },
+      // {
+      //   title: 'landing',
+      //   url: '/landing',
+      //   icon: 'tablet-portrait'
+      // },
     ];
   }
 }

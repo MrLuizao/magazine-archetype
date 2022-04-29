@@ -59,6 +59,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   openSubscription(){
-    this.router.navigateByUrl('subscription');
+    // this.router.navigateByUrl('subscription');
+    this.router.navigateByUrl('landing');
   }
 }

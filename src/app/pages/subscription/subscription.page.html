@@ -3,6 +3,7 @@
   <ion-toolbar color="color1">
       <ion-buttons slot="start">
           <ion-button  color="light" routerLink="/tabs/categories" routerDirection="root">
+            <!-- <ion-button  color="light" routerLink="/landing" routerDirection="root"> -->
               <ion-icon name="arrow-back"></ion-icon>
           </ion-button>
       </ion-buttons>
@@ -13,52 +14,51 @@
 
 <ion-content>
 
-  <ion-card>
-    <!-- <img src="./madison.jpg" /> -->
+  <section>
+
+    <ion-card style="box-shadow: none; height: 30%;">
     <ion-card-header>
-      <ion-card-title>$ 500 for Year</ion-card-title>
+      <ion-card-title>Basic</ion-card-title>
       <ion-card-subtitle>Digital-only access</ion-card-subtitle>
+      <ion-card-title class="top-1">$299 / year</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       After one year, renews automatically
     </ion-card-content>
 
-    <ion-button color="color1">
+    <ion-button color="color1" expand="block">
       Select
     </ion-button>
 
-  </ion-card>
+    </ion-card>
 
-  <ion-card>
-    <!-- <img src="./madison.jpg" /> -->
-    <ion-card-header>
-      <ion-card-title>$ 500 for Year</ion-card-title>
-      <ion-card-subtitle>Digital-only access</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      After one year, renews automatically
-    </ion-card-content>
-
-    <ion-button color="color1">
-      Select
-    </ion-button>
-
-  </ion-card>
-
-  <ion-card>
-    <!-- <img src="./madison.jpg" /> -->
-    <ion-card-header>
-      <ion-card-title>$ 500 for Year</ion-card-title>
-      <ion-card-subtitle>Digital-only access</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      After one year, renews automatically
-    </ion-card-content>
-
-    <ion-button color="color1">
-      Select
-    </ion-button>
-
-  </ion-card>
+    <ion-card style="box-shadow: none; height: 30%;">
+      <ion-card-header>
+        <ion-card-title>Pro</ion-card-title>
+        <ion-card-subtitle>Print + digital access</ion-card-subtitle>
+        <ion-card-title class="top-1">$799 / year</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        After one year, renews automatically
+      </ion-card-content>
   
+      <ion-button color="color1" expand="block">
+        Select
+      </ion-button>
+  
+    </ion-card>
+    
+    <ion-card style="box-shadow: none; height: 30%;">
+    <ion-card-header>
+      <ion-card-title>Free</ion-card-title>
+      <ion-card-subtitle class="top-1">Digital access (selectecd content)</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-button color="color1" expand="block">
+      Select
+    </ion-button>
+
+    </ion-card>
+  </section>
+
 </ion-content>
